@@ -6,9 +6,13 @@ import cors from "cors";
 
 const app = express(); 
 
+const allowedOrigins = [
+    "http://localhost:8080",
+     'https://intern-assignment-blush.vercel.app'
+];
 
 app.use(cors({
-  origin: "http://localhost:8080", 
+  origin: allowedOrigins, 
   methods: ["GET", "POST"],
 }));
 app.use(express.json());
